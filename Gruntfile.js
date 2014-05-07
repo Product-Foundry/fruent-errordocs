@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                 options: {
                 },
                 files: {
-                    '<%= config.dist %>/index.html': '<%= config.dist %>/index.html'
+                    '<%= config.dist %>/503.html': '<%= config.dist %>/503.html'
                 }
             }
         },
@@ -438,6 +438,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'newer:jshint',
         'test',
+        'clean',
         'build'
     ]);
 };

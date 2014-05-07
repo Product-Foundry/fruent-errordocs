@@ -1,5 +1,5 @@
 {
-  "name": "fruent-site",
+  "name": "fruent-errordocs",
   "private": true,
   "dependencies": {
     "jquery": "~1.11.0"

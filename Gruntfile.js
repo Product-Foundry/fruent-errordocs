@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     // Load additional NPM tasks
     grunt.loadNpmTasks('grunt-favicons');
     grunt.loadNpmTasks('grunt-inline-css');
+    grunt.loadNpmTasks('grunt-imagine');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -37,6 +38,13 @@ module.exports = function (grunt) {
                     '<%= config.dist %>/index.html': '<%= config.dist %>/index.html'
                 }
             }
+        },
+
+        inlineImg: {
+            src: ['<%= config.dist %>/**/*.css', '<%= config.dist %>/*.html'],
+            ie8: false,
+            base: '<%= config.dist %>/images',
+            dest: '<%= config.dist %>'
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -421,6 +429,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
         'usemin',
+        'inlineImg',
         'inlinecss',
         'favicons',
         'htmlmin'

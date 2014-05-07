@@ -6,26 +6,22 @@ html,body {
   height: 100%;
 }
 
-body {
-  background: #fafafa;
-  margin: 0px;
+body#errordoc {
+  display: table;
   background: url('/images/fruentbg.jpg') no-repeat center center;
   background-size: cover;
-}
-
-#maintenance {
+  color: #efefef;
   margin: auto;
-  position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  text-align: center;
-  color: white;
 }
 
-h1 {
-  font-size: 30px;
+body>div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 p {

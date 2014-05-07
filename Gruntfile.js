@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 
     // Load additional NPM tasks
     grunt.loadNpmTasks('grunt-favicons');
+    grunt.loadNpmTasks('grunt-inline-css');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -26,6 +27,16 @@ module.exports = function (grunt) {
             // Configurable paths
             app: 'app',
             dist: 'dist'
+        },
+
+        inlinecss: {
+            main: {
+                options: {
+                },
+                files: {
+                    '<%= config.dist %>/index.html': '<%= config.dist %>/index.html'
+                }
+            }
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -410,6 +421,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'rev',
         'usemin',
+        'inlinecss',
         'favicons',
         'htmlmin'
     ]);
